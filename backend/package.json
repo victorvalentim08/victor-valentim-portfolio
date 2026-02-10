@@ -1,22 +1,25 @@
 {
-  "name": "victor-valentim-portfolio",
+  "name": "victor-valentim-portfolio-backend",
   "version": "1.0.0",
-  "description": "Este é o meu projeto de portfólio pessoal, desenvolvido para demonstrar minhas habilidades em desenvolvimento Fullstack, desde a modelagem de dados no MySQL até a interface dinâmica em React.",
-  "main": "index.js",
+  "description": "Backend do portfólio pessoal desenvolvido com Node.js, Prisma e PostgreSQL.",
+  "main": "src/server.js",
+  "type": "module",
   "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Victor Valentim",
+  "license": "MIT",
   "dependencies": {
     "@prisma/client": "^6.19.2",
-    "cors": "^2.8.6",
-    "dotenv": "^17.2.4",
-    "express": "^5.2.1"
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.11",
+    "nodemon": "^3.1.9",
     "prisma": "^6.19.2"
   }
 }
