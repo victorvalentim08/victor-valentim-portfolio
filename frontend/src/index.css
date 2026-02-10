@@ -1,1 +1,43 @@
 @import "tailwindcss";
+
+/* Configurações de Tema do Tailwind v4 */
+@theme {
+  /* Cores padronizadas */
+  --color-brand: #3b82f6; /* O seu azul */
+  --color-background: #050505;
+  --color-card: #0f0f0f;
+  
+  /* Tipografia */
+  --font-sans: "Inter", "Geist", system-ui, sans-serif;
+  --font-mono: "Fira Code", monospace;
+}
+
+/* Configurações Globais */
+@layer base {
+  html {
+    scroll-behavior: smooth; /* Deslizamento suave entre seções */
+    @apply bg-[#050505] text-zinc-100;
+  }
+
+  body {
+    @apply antialiased font-sans; /* Deixa as fontes mais nítidas */
+  }
+
+  /* Scrollbar Minimalista (Para não quebrar o visual) */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-black;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-800 rounded-full hover:bg-zinc-700;
+  }
+}
+
+/* Utilitários Extras */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
