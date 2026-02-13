@@ -13,13 +13,10 @@ const Projects = () => {
     { id: 4, title: "Unitasks", year: "2025", description: "Sistema de organização para estudantes universitários.", longDescription: "Plataforma focada em produtividade acadêmica, permitindo gerenciar tarefas, prazos e notas de forma centralizada.", tags: ["React", "JavaScript", "Node.js"], image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80&w=800", link: "#", deployUrl: "#" }
   ];
 
-  // Efeito Infinito: Duplicamos a lista para que sempre haja algo à frente
   const projects = [...baseProjects, ...baseProjects, ...baseProjects];
-
   const scroll = (direction) => {
     const { current } = scrollRef;
     if (current) {
-      // Ajustamos o valor do scroll para bater com o novo tamanho dos cards
       const scrollAmount = window.innerWidth > 768 ? 500 : 320;
       current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,

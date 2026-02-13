@@ -4,19 +4,13 @@ const ProjectModal = ({ project, onClose }) => {
   if (!project) return null;
 
   return (
-    // Backdrop fixo que cobre a tela inteira independentemente do carrossel
     <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4">
-      
-      {/* Overlay escuro */}
       <div 
         className="fixed inset-0 bg-black/90 backdrop-blur-md" 
         onClick={onClose}
       ></div>
 
-      {/* Card com largura e altura MÁXIMAS definidas */}
       <div className="relative z-[100000] bg-zinc-900 w-full max-w-lg rounded-[2.5rem] border border-white/10 overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
-        
-        {/* Botão Fechar */}
         <button 
           onClick={(e) => {
             e.stopPropagation();
@@ -26,17 +20,13 @@ const ProjectModal = ({ project, onClose }) => {
         >
           ✕
         </button>
-
-        {/* IMAGEM COM ALTURA FIXA E CORTE (Object-Cover) */}
         <div className="w-full h-56 sm:h-72 flex-shrink-0 overflow-hidden bg-zinc-800">
           <img 
             src={project.image} 
             alt={project.title} 
-            className="w-full h-full object-cover block" // O 'block' ajuda a remover espaços fantasmas
+            className="w-full h-full object-cover block" 
           />
         </div>
-
-        {/* CONTEÚDO COM SCROLL SE NECESSÁRIO */}
         <div className="p-8 overflow-y-auto">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-2xl font-black uppercase tracking-tighter">{project.title}</h2>
